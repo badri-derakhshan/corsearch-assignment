@@ -1,0 +1,60 @@
+.container {
+  @apply flex min-h-screen w-full flex-col bg-muted/40;
+}
+
+.sidebar {
+  @apply fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex;
+}
+
+.navbar {
+  @apply flex flex-col items-center gap-4 px-2 sm:py-5;
+
+  &__item {
+    @apply flex h-9 w-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 rounded-full;
+    &__icon {
+      @apply h-5 w-5;
+    }
+    &__title {
+      @apply sr-only;
+    }
+  }
+}
+
+.navbarMobile {
+  @apply sm:max-w-xs bg-card;
+  &__navbar {
+    @apply grid gap-6 text-lg font-medium;
+    &__item {
+      @apply flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground;
+    }
+    &__icon {
+      @apply h-5 w-5;
+    }
+  }
+}
+
+.navbarBottom {
+  @apply mt-auto flex flex-col items-center gap-4 px-2 sm:py-5;
+}
+
+.pageContainer {
+  @apply flex flex-col sm:gap-4 sm:py-4 sm:pl-14;
+
+  .headerContainer {
+    @apply sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-card px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6;
+
+    &__breadcrumb {
+      @apply hidden md:flex;
+    }
+    &__profileIcon {
+      @apply ml-auto;
+    }
+    &__button {
+      @apply overflow-hidden rounded-full;
+    }
+  }
+
+  .contentContainer {
+    @apply grid flex-1 items-start p-4 sm:px-6 sm:py-0 overflow-x-hidden space-y-3;
+  }
+}
