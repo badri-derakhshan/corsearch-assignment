@@ -40,8 +40,9 @@ const Users: NextPageWithLayout = () => {
       />
 
       <div className={style.container}>
-        {modifiedUsers &&
-          modifiedUsers.map((user) => <UserCard key={user.id} user={user} />)}
+        {modifiedUsers
+          ? modifiedUsers.map((user) => <UserCard key={user.id} user={user} />)
+          : new Array(10).fill(0).map((_, i) => <UserCard showSkeleton key={i} />)}
       </div>
     </>
   );
