@@ -33,7 +33,10 @@ const transformUserResponse = (user: UserResponse): User => {
     userName: user.username,
     address: {
       city: user.address.city,
-      geo: user.address.geo,
+      geo: {
+        lat: user.address.geo.lat,
+        lang: user.address.geo.lng
+      },
       street: user.address.street,
       suite: user.address.suite,
       zipCode: user.address.zipcode

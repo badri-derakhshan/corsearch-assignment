@@ -6,7 +6,7 @@ type Company = {
 
 type Geo = {
   lat: number;
-  lng: number;
+  lang: number;
 };
 
 type Address = {
