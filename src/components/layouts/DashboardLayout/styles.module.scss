@@ -20,6 +20,9 @@
     &__title {
       @apply sr-only;
     }
+    &__logo {
+      @apply text-sky-400;
+    }
   }
 }
 

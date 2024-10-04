@@ -32,6 +32,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/Tooltip
 import { ReactNode } from 'react';
 import styles from './styles.module.scss';
 import NavLink from '@/components/ui/NavLink';
+import { cn } from '@/lib/utils';
 
 type Props = {
   children: ReactNode;
@@ -50,7 +51,7 @@ const DashboardLayout = ({ children }: Props) => {
     <div className={styles.container}>
       <aside className={styles.sidebar}>
         <nav className={styles.navbar}>
-          <Citrus className={styles['navbar__item']} />
+          <Citrus className={cn(styles['navbar__item'], styles['navbar__item__logo'])} />
           {menuList.map((item) => {
             const Icon = item.icon;
             return (
