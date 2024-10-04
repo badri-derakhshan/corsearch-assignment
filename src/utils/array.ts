@@ -16,7 +16,7 @@ const filterBy = <T extends Record<Primitives, Primitives | Record<Primitives, u
     if (typeof item[filterKey] === 'object') {
       return Object.values(item[filterKey]).some((value) => {
         if (!value || typeof value === 'object') return false;
-        value.toString().toLowerCase().includes(search.toLowerCase());
+        return value.toString().toLowerCase().includes(search.toLowerCase());
       });
     }
     return item[filterKey].toString().toLowerCase().includes(search.toLowerCase());
