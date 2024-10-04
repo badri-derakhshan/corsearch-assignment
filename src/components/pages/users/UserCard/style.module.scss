@@ -26,3 +26,20 @@
     @apply text-sky-400;
   }
 }
+
+.skeletonContainer {
+  @apply flex flex-col space-y-8 justify-center p-4;
+
+  .titleSkeleton {
+    @apply h-10 w-full rounded-xl;
+  }
+  .addressContainer {
+    @apply space-y-3;
+  }
+  .addressSkeleton {
+    @apply h-4 w-2/3;
+  }
+  .footerSkeleton {
+    @apply h-7 w-5/6;
+  }
+}

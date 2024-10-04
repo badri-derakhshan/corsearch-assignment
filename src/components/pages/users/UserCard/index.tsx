@@ -16,9 +16,24 @@ import {
 } from '@/utils/url';
 import type { User } from '@/types';
 import styles from './style.module.scss';
+import { Skeleton } from '@/components/ui/skeleton';
 
-type Props = { user: User };
-const UserCard = ({ user }: Props) => {
+type Props = { user: User; showSkeleton?: never } | { showSkeleton: true; user?: never };
+
+const UserCard = ({ user, showSkeleton }: Props) => {
+  if (showSkeleton) {
+    return (
+      <Card className={styles.skeletonContainer}>
+        <Skeleton className={styles.titleSkeleton} />
+        <div className={styles.addressContainer}>
+          <Skeleton className={styles.addressSkeleton} />
+          <Skeleton className={styles.addressSkeleton} />
+          <Skeleton className={styles.addressSkeleton} />
+        </div>
+        <Skeleton className={styles.footerSkeleton} />
+      </Card>
+    );
+  }
   const { id, name, email, phone, website, address } = user;
   return (
     <Card key={id}>
