@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle
-} from '@/components/ui/card';
+} from '@/components/ui/Card';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, User2, ExternalLink } from 'lucide-react';
 import {
@@ -16,7 +16,7 @@ import {
 } from '@/utils/url';
 import type { User } from '@/types';
 import styles from './style.module.scss';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 type Props = { user: User; showSkeleton?: never } | { showSkeleton: true; user?: never };
 

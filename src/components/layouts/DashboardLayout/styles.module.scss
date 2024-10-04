@@ -10,7 +10,10 @@
   @apply flex flex-col items-center gap-4 px-2 sm:py-5;
 
   &__item {
-    @apply flex h-9 w-9 items-center justify-center text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 rounded-full;
+    @apply flex h-9 w-9 items-center justify-center transition-colors md:h-8 md:w-8 rounded-full;
+    &--active {
+      @apply bg-primary text-primary-foreground;
+    }
     &__icon {
       @apply h-5 w-5;
     }
@@ -25,7 +28,7 @@
   &__navbar {
     @apply grid gap-6 text-lg font-medium;
     &__item {
-      @apply flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground;
+      @apply flex items-center gap-4 px-2.5;
     }
     &__icon {
       @apply h-5 w-5;

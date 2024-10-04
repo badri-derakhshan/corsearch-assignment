@@ -2,12 +2,12 @@ import {
   Home,
   LineChart,
   Package,
-  Package2,
   PanelLeft,
   Settings,
   ShoppingCart,
   Users2,
-  CircleUserRound
+  CircleUserRound,
+  Citrus
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -17,8 +17,8 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator
-} from '@/components/ui/breadcrumb';
-import { Button } from '@/components/ui/button';
+} from '@/components/ui/Breadcrumb';
+import { Button } from '@/components/ui/Button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,22 +26,23 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+} from '@/components/ui/Dropdown-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/Sheet';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/Tooltip';
 import { ReactNode } from 'react';
 import styles from './styles.module.scss';
+import NavLink from '@/components/ui/NavLink';
 
 type Props = {
   children: ReactNode;
 };
 
 const menuList = [
-  { title: 'Users', icon: Users2 },
-  { title: 'Dashboard', icon: Home },
-  { title: 'ShoppingCart', icon: ShoppingCart },
-  { title: 'Products', icon: Package },
-  { title: 'Setting', icon: LineChart }
+  { title: 'Users', icon: Users2, path: '/users' },
+  { title: 'Dashboard', icon: Home, path: '#' },
+  { title: 'ShoppingCart', icon: ShoppingCart, path: '#' },
+  { title: 'Products', icon: Package, path: '#' },
+  { title: 'Setting', icon: LineChart, path: '#' }
 ];
 
 const DashboardLayout = ({ children }: Props) => {
@@ -49,19 +50,21 @@ const DashboardLayout = ({ children }: Props) => {
     <div className={styles.container}>
       <aside className={styles.sidebar}>
         <nav className={styles.navbar}>
-          <Link href='#' className={styles['navbar__item']}>
-            <Package2 />
-          </Link>
+          <Citrus className={styles['navbar__item']} />
           {menuList.map((item) => {
             const Icon = item.icon;
             return (
               <Tooltip key={item.title}>
-                <TooltipTrigger asChild>
-                  <Link href='#' className={styles['navbar__item']}>
+                <NavLink
+                  activeClassName={styles['navbar__item--active']}
+                  href={item.path}
+                  className={styles['navbar__item']}
+                >
+                  <TooltipTrigger asChild>
                     <Icon className={styles['navbar__item__icon']} />
-                    <span className={styles['navbar__item__title']}>{item.title}</span>
-                  </Link>
-                </TooltipTrigger>
+                  </TooltipTrigger>
+                  <span className={styles['navbar__item__title']}>{item.title}</span>
+                </NavLink>
                 <TooltipContent side='right'>{item.title}</TooltipContent>
               </Tooltip>
             );

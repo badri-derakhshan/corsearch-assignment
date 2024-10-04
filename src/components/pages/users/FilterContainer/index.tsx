@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/Button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,8 +7,8 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu';
-import { Input } from '@/components/ui/input';
+} from '@/components/ui/Dropdown-menu';
+import { Input } from '@/components/ui/Input';
 import { ListFilter, ArrowDownAZ, ArrowUpAZ } from 'lucide-react';
 import styles from './style.module.scss';
 import { FilterByParams, SortByParams } from '@/utils/array';
