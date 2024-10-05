@@ -13,7 +13,7 @@ import { ListFilter, ArrowDownAZ, ArrowUpAZ } from 'lucide-react';
 import styles from './style.module.scss';
 import { FilterByParams, SortByParams } from '@/utils/array';
 import { User } from '@/types';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/style';
 import { testIds } from '@/constants/test-ids';
 
 export type Props = {

@@ -32,7 +32,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/Tooltip
 import { Fragment, ReactNode } from 'react';
 import styles from './styles.module.scss';
 import NavLink from '@/components/ui/NavLink';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/style';
 
 type Props = {
   children: ReactNode;
