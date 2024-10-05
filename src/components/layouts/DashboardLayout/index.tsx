@@ -29,7 +29,7 @@ import {
 } from '@/components/ui/Dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/Sheet';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/Tooltip';
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 import styles from './styles.module.scss';
 import NavLink from '@/components/ui/NavLink';
 import { cn } from '@/lib/utils';
@@ -119,14 +119,14 @@ const DashboardLayout = ({ children }: Props) => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               {[{ title: 'Users', url: '/users' }].map(({ title, url }) => (
-                <>
+                <Fragment key={title}>
                   <BreadcrumbItem>
                     <BreadcrumbLink asChild>
                       <Link href={url}>{title}</Link>
                     </BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
-                </>
+                </Fragment>
               ))}
             </BreadcrumbList>
           </Breadcrumb>
