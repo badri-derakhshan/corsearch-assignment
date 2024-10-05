@@ -1,40 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# User Dashboard
 
-## Getting Started
+This project is a **simple dashboard** that displays a list of users fetched from a REST API. It allows the user to filter and sort the list while ensuring the layout is responsive and adapts to different screen sizes.
 
-First, run the development server:
+## Table of Contents
+
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Setup and Installation](#setup-and-installation)
+- [Why Client-Side Rendering (CSR)?](#why-client-side-rendering-csr)
+- [Customization](#customization)
+- [License](#license)
+
+## Tech Stack
+
+- **Framework**: Nextjs (Client-Side Rendered)
+- **UI Framework**: [shadcn](https://github.com/shadcn) (based on Radix UI)
+- **CSS**: Tailwind CSS + Sass modules
+- **API**: RESTful API + React query
+- **Package Manager**: npm
+- **E2E Testing framework**: Playwright
+
+## Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── src/
+│   ├── api/           # Api call functions
+│   ├── components/    # Reusable UI components
+│   ├── constants/     # Constant values (Test ids, etc.)
+│   ├── hooks/         # Custom React hooks (API calls, etc.)
+│   ├── pages/         # Main pages (Dashboard, etc.)
+│   ├── services/      # Thrid party service wrappers
+│   ├── styles/        # Base CSS setup
+│   ├── types/         # Shared types (Data types, etc.)
+│   └── utils/         # Helper functions (sorting, filtering)
+├── public/            # Static assets
+├── e2e/               # E2E test files seperated by pages
+├── package.json       # Dependencies and scripts
+└── README.md          # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup and Installation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/badri-derakhshan/corsearch-assignment.git
+   ```
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+   ```bash
+   npm run dev
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. The application should now be running at [http://localhost:3000](http://localhost:3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. To run tests:
 
-## Learn More
+   ```bash
+   npm t
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Why Client-Side Rendering (CSR)?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is **client-side rendered** (CSR) because:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Easier for development**: No need for complex server-side rendering logic.
+- **Reduced server load**: The bulk of the work is handled by the user's browser, which leads to fewer server resources being used.
+- **No need for SEO**: Since this is a dashboard, search engine optimization (SEO) is not a priority, making CSR a suitable choice.
 
-## Deploy on Vercel
+## Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The UI components are built using **shadcn**, a lightweight design system based on **Radix UI**. This allowing you to easily adapt the look and feel of the components to suit your needs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License.
