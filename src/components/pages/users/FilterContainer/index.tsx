@@ -15,7 +15,6 @@ import { FilterByParams, SortByParams } from '@/utils/array';
 import { User } from '@/types';
 import { cn } from '@/lib/utils';
 import { testIds } from '@/constants/test-ids';
-console.log({ styles });
 
 export type Props = {
   filter: FilterByParams<User>;
