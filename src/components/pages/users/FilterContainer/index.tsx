@@ -14,6 +14,7 @@ import styles from './style.module.scss';
 import { FilterByParams, SortByParams } from '@/utils/array';
 import { User } from '@/types';
 import { cn } from '@/lib/utils';
+import { testIds } from '@/constants/test-ids';
 console.log({ styles });
 
 export type Props = {
@@ -68,10 +69,11 @@ const FilterContainer = ({
           value={search}
           onChange={(event) => setFilter({ filterKey, search: event.target.value })}
           className='max-w-sm'
+          data-testid={testIds.users['search-input']}
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button>
+            <Button data-testid={testIds.users['filter-button']}>
               <ListFilter className='h-4' /> Filter by {filterKey}
             </Button>
           </DropdownMenuTrigger>
@@ -90,6 +92,7 @@ const FilterContainer = ({
       </div>
       <div className={styles.sortContainer}>
         <Button
+          data-testid={testIds.users['sort-by-name-button']}
           onClick={handleSortChange('name')}
           className={cn(
             styles.sortButton,
@@ -104,6 +107,7 @@ const FilterContainer = ({
           )}
         </Button>
         <Button
+          data-testid={testIds.users['sort-by-email-button']}
           onClick={handleSortChange('email')}
           className={cn(
             styles.sortButton,

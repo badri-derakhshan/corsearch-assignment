@@ -8,6 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 import { ReactElement, useMemo, useState } from 'react';
 import { NextPageWithLayout } from '../_app';
 import style from './style.module.scss';
+import { testIds } from '@/constants/test-ids';
 
 const Users: NextPageWithLayout = () => {
   const { data } = useQuery({
@@ -39,7 +40,7 @@ const Users: NextPageWithLayout = () => {
         sort={sort}
       />
 
-      <div className={style.container}>
+      <div className={style.container} data-testid={testIds.users['cards-container']}>
         {modifiedUsers
           ? modifiedUsers.map((user) => <UserCard key={user.id} user={user} />)
           : new Array(10).fill(0).map((_, i) => <UserCard showSkeleton key={i} />)}

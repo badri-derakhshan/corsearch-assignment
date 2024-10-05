@@ -17,6 +17,7 @@ import {
 import type { User } from '@/types';
 import styles from './style.module.scss';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { testIds } from '@/constants/test-ids';
 
 type Props = { user: User; showSkeleton?: never } | { showSkeleton: true; user?: never };
 
@@ -36,11 +37,16 @@ const UserCard = ({ user, showSkeleton }: Props) => {
   }
   const { id, name, email, phone, website, address } = user;
   return (
-    <Card key={id}>
+    <Card key={id} data-testid={testIds.users['card-item']}>
       <CardHeader>
         <CardTitle className={styles['cardHeader__titleContainer']}>
           <User2 />
-          <p className={styles['cardHeader__titleContainer__title']}>{name}</p>
+          <p
+            data-testid={testIds.users['card-item-name']}
+            className={styles['cardHeader__titleContainer__title']}
+          >
+            {name}
+          </p>
         </CardTitle>
         <Link
           className={styles['cardHeader__website']}
@@ -90,7 +96,7 @@ const UserCard = ({ user, showSkeleton }: Props) => {
           className={styles['cardFooter__titleContainer']}
         >
           <Mail size={15} className={styles['cardFooter__icon']} />
-          <p>{email}</p>
+          <p data-testid={testIds.users['card-item-email']}>{email}</p>
         </Link>
       </CardFooter>
     </Card>
