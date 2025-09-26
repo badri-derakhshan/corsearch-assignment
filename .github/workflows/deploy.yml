@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       name: get build artifacts
+      run: echo "Deploying"
 
 
   
