@@ -23,6 +23,7 @@ jobs:
         name: build-output
         path: out/
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: get build artifacts
